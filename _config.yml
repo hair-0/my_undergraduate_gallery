@@ -12,23 +12,28 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "zh-CN"
+default_locale           : "zh-CN"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
-title                    : "我的个人博客"
-title_separator          : "-"
-subtitle                 : "记录我的学习与生活"
+title                    : "本科作品集"
+title_en                 : "Undergraduate Gallery"
+title_separator          : "·"
+subtitle                 : "机械工程 → 计算机科学 | 具身智能 · VLA · VLM"
+subtitle_en              : "Mechanical Engineering → Computer Science | Embodied AI · VLA · VLM"
 name                     : "hair-0"
-description              : "欢迎来到我的个人博客，在这里分享我的技术学习心得和生活感悟。"
+description              : "机械工程本科生的作品集，申请计算机科学硕士，方向为具身智能、VLA 与 VLM。"
+description_en           : "Portfolio of a Mechanical Engineering undergraduate applying for a Computer Science master's in Embodied AI, VLA and VLM."
 url                      : "https://hair-0.github.io"
-baseurl                  : "/my_test_web"
-repository               : "hair-0/my_test_web"
+baseurl                  : "/my_undergraduate_gallery"
+repository               : "hair-0/my_undergraduate_gallery"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : # true, false (default)
+cv_pdf                   : # path to a downloadable CV PDF, e.g. "/assets/files/cv.pdf"
 words_per_minute         : 200
 enable_copy_code_button  : # true, false (default)
 copyright                : # "copyright" name, defaults to site.title
@@ -114,52 +119,29 @@ analytics:
 # Site Author
 author:
   name             : "hair-0"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "热爱技术，热爱生活"
+  avatar           : "/assets/images/avatar.svg"
+  bio              : "机械工程本科生 · 申请计算机科学硕士 · 具身智能 / VLA / VLM"
+  bio_en           : "ME undergraduate · CS master's applicant · Embodied AI / VLA / VLM"
   location         : "China"
   email            : # your.email@example.com
   links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/hair-0"
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       # url: "mailto:your.name@email.com"
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/"
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      # url: "https://facebook.com/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
 
 # Site Footer
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url:
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
+      url: "https://github.com/hair-0"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
       # url:
-    - label: "GitLab"
-      icon: "fab fa-fw fa-gitlab"
-      # url:
-    - label: "Bitbucket"
-      icon: "fab fa-fw fa-bitbucket"
-      # url:
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url:
-  since: "2013"
+  since: "2026"
 
 
 # Reading Files
@@ -192,6 +174,7 @@ exclude:
   - Rakefile
   - README
   - tmp
+  - _templates
   - /docs # ignore Minimal Mistakes /docs
   - /test # ignore Minimal Mistakes /test
 keep_files:
@@ -312,6 +295,13 @@ compress_html:
     envs: development
 
 
+# Collections
+collections:
+  portfolio:
+    output: true
+  portfolio_en:
+    output: true
+
 # Defaults
 defaults:
   # _posts
@@ -323,5 +313,42 @@ defaults:
       author_profile: true
       read_time: true
       comments: # true
-      share: true
-      related: true
+      share: false
+      related: false
+      lang: "zh-CN"
+  # _portfolio
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: single
+      author_profile: false
+      share: false
+      related: false
+      lang: "zh-CN"
+      permalink: /works/:name/
+  # _portfolio_en
+  - scope:
+      path: ""
+      type: portfolio_en
+    values:
+      layout: single
+      author_profile: false
+      share: false
+      related: false
+      lang: "en-US"
+      permalink: /en/works/:name/
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      lang: "zh-CN"
+  # _pages/en
+  - scope:
+      path: "_pages/en"
+      type: pages
+    values:
+      layout: single
+      lang: "en-US"

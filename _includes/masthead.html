@@ -1,18 +1,29 @@
 {% capture logo_path %}{{ site.logo }}{% endcapture %}
+{% assign nav = site.data.navigation.main %}
+{% assign home_url = '/' %}
+{% if page.lang == "en-US" %}
+  {% assign nav = site.data.navigation.main_en %}
+  {% assign home_url = '/en/' %}
+{% endif %}
 
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         {% unless logo_path == empty %}
-          <a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="{{ site.masthead_title | default: site.title }}"></a>
+          <a class="site-logo" href="{{ home_url | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="{{ site.masthead_title | default: site.title }}"></a>
         {% endunless %}
-        <a class="site-title" href="{{ '/' | relative_url }}">
-          {{ site.masthead_title | default: site.title | escape_once | strip }}
-          {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle | escape_once | strip }}</span>{% endif %}
+        <a class="site-title" href="{{ home_url | relative_url }}">
+          {% if page.lang == "en-US" %}
+            {{ site.masthead_title | default: site.title_en | default: site.title | escape_once | strip }}
+            {% if site.subtitle_en %}<span class="site-subtitle">{{ site.subtitle_en | escape_once | strip }}</span>{% endif %}
+          {% else %}
+            {{ site.masthead_title | default: site.title | escape_once | strip }}
+            {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle | escape_once | strip }}</span>{% endif %}
+          {% endif %}
         </a>
         <ul class="visible-links">
-          {%- for link in site.data.navigation.main -%}
+          {%- for link in nav -%}
             <li class="masthead__menu-item">
               <a
                 href="{{ link.url | relative_url }}"
@@ -21,6 +32,13 @@
               >{{ link.title }}</a>
             </li>
           {%- endfor -%}
+          <li class="masthead__menu-item">
+            {% if page.lang == "en-US" %}
+              <a href="{{ page.alt_url | default: '/' | relative_url }}">中文</a>
+            {% else %}
+              <a href="{{ page.alt_url | default: '/en/' | relative_url }}">EN</a>
+            {% endif %}
+          </li>
         </ul>
         {% if site.search == true %}
         <button class="search__toggle" type="button">

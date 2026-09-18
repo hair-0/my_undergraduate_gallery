@@ -31,11 +31,11 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1'
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          bundler-cache: true
       - name: Build with Jekyll
-        uses: limjh16/jekyll-action-ts@v2
-        with:
-          enable_cache: true
+        run: bundle exec jekyll build --trace
+        env:
+          JEKYLL_ENV: production
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
