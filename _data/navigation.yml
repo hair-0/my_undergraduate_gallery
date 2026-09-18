@@ -1,20 +1,12 @@
 # main links
 main:
+  - title: "简介"
+    url: /profile/
   - title: "作品"
     url: /works/
-  - title: "笔记"
-    url: /notes/
-  - title: "简历"
-    url: /cv/
-  - title: "关于"
-    url: /about/
 
 main_en:
+  - title: "Profile"
+    url: /en/profile/
   - title: "Works"
     url: /en/works/
-  - title: "Notes"
-    url: /en/notes/
-  - title: "CV"
-    url: /en/cv/
-  - title: "About"
-    url: /en/about/

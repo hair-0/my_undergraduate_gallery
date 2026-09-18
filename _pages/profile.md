@@ -1,12 +1,16 @@
 ---
-title: "关于我"
-permalink: /about/
+title: "个人简介"
+permalink: /profile/
 author_profile: true
 lang: zh-CN
-alt_url: /en/about/
+alt_url: /en/profile/
 ---
 
-## 你好，我是 hair-0
+{% if site.cv_pdf %}
+<p><a href="{{ site.cv_pdf | relative_url }}" class="btn btn--primary" target="_blank" rel="noopener">下载 PDF 简历</a></p>
+{% endif %}
+
+## 关于我
 
 机械工程本科生，正在申请计算机科学硕士，方向为具身智能、VLA 与 VLM。
 
@@ -21,9 +25,18 @@ alt_url: /en/about/
 
 ## 教育背景
 
-- 【学校名称】 · 机械工程 · 本科 · 【2022 – 2026】
-  - 相关课程：【机器学习、计算机视觉、机器人学、自动控制原理…】
-  - GPA / 排名：【待填写】
+**机械工程 本科** · 【学校名称】 · 【2022 – 2026】
+- GPA：【待填写】 / 排名：【待填写】
+- 相关课程：机器学习、计算机视觉、机器人学、自动控制原理
+
+## 项目经历
+
+- 【项目名称】 · 【角色】 · 【时间】：【一句话说明问题、方法与结果，详见作品页】
+
+## 实习与科研经历
+
+**【单位 / 课题组】** · 【岗位】 · 【时间】
+- 【工作内容与产出】
 
 ## 技能
 
@@ -32,9 +45,13 @@ alt_url: /en/about/
 - **机器人**：ROS / ROS 2、【Isaac Sim / MuJoCo / Gazebo】、运动规划与控制
 - **机械工程**：CAD（SolidWorks 等）、有限元与动力学仿真
 
-## 项目与经历
+## 荣誉与奖项
 
-- 【一行说明：课题/竞赛/实习 + 时间 + 你的角色，详见作品页】
+- 【奖项名称】 · 【时间】
+
+## 语言与考试
+
+- 英语：【TOEFL / IELTS / CET-6 成绩，待填写】
 
 ## 联系方式
 

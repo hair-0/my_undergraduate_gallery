@@ -1,12 +1,16 @@
 ---
-title: "About"
-permalink: /en/about/
+title: "Profile"
+permalink: /en/profile/
 author_profile: true
 lang: en-US
-alt_url: /about/
+alt_url: /profile/
 ---
 
-## Hi, I'm hair-0
+{% if site.cv_pdf %}
+<p><a href="{{ site.cv_pdf | relative_url }}" class="btn btn--primary" target="_blank" rel="noopener">Download CV (PDF)</a></p>
+{% endif %}
+
+## About Me
 
 I am a Mechanical Engineering undergraduate applying for a Computer Science master's, focusing on embodied intelligence, VLA and VLM.
 
@@ -21,9 +25,18 @@ My undergraduate training is in mechanical engineering: mechanics, control, mech
 
 ## Education
 
-- 【University】 · Mechanical Engineering · B.Eng. · 【2022 – 2026】
-  - Relevant coursework: 【Machine Learning, Computer Vision, Robotics, Control Theory…】
-  - GPA / Ranking: 【TBD】
+**B.Eng. in Mechanical Engineering** · 【University】 · 【2022 – 2026】
+- GPA: 【TBD】 / Ranking: 【TBD】
+- Relevant coursework: Machine Learning, Computer Vision, Robotics, Control Theory
+
+## Projects
+
+- 【Project Title】 · 【Role】 · 【Period】: 【one line on problem, approach and result; see Works】
+
+## Research & Internship
+
+**【Lab / Company】** · 【Position】 · 【Period】
+- 【What you did and produced】
 
 ## Skills
 
@@ -32,9 +45,13 @@ My undergraduate training is in mechanical engineering: mechanics, control, mech
 - **Robotics**: ROS / ROS 2, 【Isaac Sim / MuJoCo / Gazebo】, motion planning and control
 - **Mechanical Engineering**: CAD (SolidWorks, etc.), FEA and dynamics simulation
 
-## Experience
+## Honors & Awards
 
-- 【One line: research / competition / internship + period + your role; see Works】
+- 【Award】 · 【Year】
+
+## Languages & Tests
+
+- English: 【TOEFL / IELTS / CET-6 score, TBD】
 
 ## Contact
 

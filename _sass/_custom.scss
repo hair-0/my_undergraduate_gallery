@@ -1,0 +1,24 @@
+.theme__toggle {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0 0.75rem;
+  color: inherit;
+  cursor: pointer;
+  font-size: 0.95em;
+  line-height: 1;
+  opacity: 0.85;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.theme__toggle:hover,
+.theme__toggle:focus {
+  color: inherit;
+  opacity: 1;
+}
+
+@media print {
+  .theme__toggle {
+    display: none;
+  }
+}

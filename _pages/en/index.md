@@ -6,12 +6,10 @@ excerpt: "Mechanical Engineering → Computer Science · Embodied AI / VLA / VLM
 header:
   overlay_color: "#16324f"
   actions:
-    - label: "View Works"
+    - label: "Profile"
+      url: /en/profile/
+    - label: "Works"
       url: /en/works/
-    - label: "About Me"
-      url: /en/about/
-    - label: "CV"
-      url: /en/cv/
 lang: en-US
 alt_url: /
 ---
@@ -35,14 +33,4 @@ alt_url: /
 I am a Mechanical Engineering undergraduate applying for a Computer Science master's, with research interests in embodied intelligence, vision-language-action models (VLA) and vision-language models (VLM).
 I want to combine mechanical systems and control with machine learning so that agents can perceive, reason and act in the real world.
 
-[Learn more →]({{ '/en/about/' | relative_url }})
-
-{% if site.posts.size > 0 %}
-## Recent Notes
-
-<ul>
-  {% for post in site.posts limit:3 %}
-    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> <small>{{ post.date | date: "%Y-%m-%d" }}</small></li>
-  {% endfor %}
-</ul>
-{% endif %}
+[View full profile →]({{ '/en/profile/' | relative_url }})
